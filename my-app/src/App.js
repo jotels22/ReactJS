@@ -1,15 +1,24 @@
-import ItemListContainer from './components/itemlistcontainer.js';
-import NavBar from './components/navbar.js';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import NavBar from './components/NavBar/navbar';
+import 'bootstrap/dist/css/bootstrap.css';
+import Contact from './components/pages/contact';
+import Home from './components/pages/home';
+import Detail from './components/pages/detail';
+
 
 
 function App()  {
 
   return (
       <>
-        <NavBar></NavBar>
-        <ItemListContainer greeting="Sección Ropa Masculina"></ItemListContainer>
-        <main>Contenido de la Página</main>
-        <footer>Footer</footer>
+    <BrowserRouter>
+      <NavBar/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/producto/:name" element={<Detail/>} />
+      </Routes>
+    </BrowserRouter>
       </>
   );
 }
