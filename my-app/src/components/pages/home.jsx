@@ -1,11 +1,11 @@
-import NavBar from "../NavBar/navbar"
-import Items from "../category/items"
-import ItemsRows from "../category/itemsRow"
+
 import items from "../category/items"
 import ItemsTableContainer from "../category/itemstablecontainer"
 import { useState } from "react"
+import Banner from "../category/Banner"
+import { Button } from "react-bootstrap"
 
-const Home = () => {
+const Home = (cart) => {
 
     const [selectedItems, setSelectedItems] = useState([])
 
@@ -17,21 +17,24 @@ const Home = () => {
     const itemsWithOnClick = items.map ((items) => {
         return{
             ...items,
-            onClick: function(id) {
+            onClick: function(id) {   
                 estaFuncionando(id)
             },
+     }
     }
-    }
-    )
+    )   
+    
 
 
     return (
         <>
-            <h1>Home</h1>
+            <Banner/>
             <ItemsTableContainer items={itemsWithOnClick} />
         </>
 
     )
 }
 export default Home
+
+
 
