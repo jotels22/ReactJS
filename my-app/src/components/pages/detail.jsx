@@ -4,7 +4,6 @@ import items from "../category/items"
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { useNavigate, useParams } from 'react-router-dom';
-import CardWidget from "../NavBar/cardwidget";
 import { useState } from "react";
 import { useCart } from "../cartContext";
 
